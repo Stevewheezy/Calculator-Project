@@ -1,132 +1,131 @@
 /* General Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    color: #fff;
-  }
-  
-  /* Calculator Container */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+
+/* Calculator Container */
+.calculator-container {
+  background: #2d2d2d;
+  width: 500px; /* Increased width */
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px; /* Adjusted padding */
+}
+
+/* Title */
+.calculator-title {
+  text-align: center;
+  font-size: 2rem; /* Increased font size */
+  margin-bottom: 30px; /* Adjusted margin */
+  color: #ffeb3b;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Display Area */
+.calculator-display {
+  background: #1e1e1e;
+  padding: 25px; /* Increased padding for a larger display */
+  border-radius: 15px; /* Adjusted rounding for consistency */
+  text-align: right;
+  margin-bottom: 30px; /* Adjusted margin for spacing */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem; /* Increased base font size */
+}
+
+.display-small-text {
+  font-size: 1rem; /* Increased font size */
+  color: #999;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.display-large-text {
+  font-size: 3rem; /* Increased font size for clarity */
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Buttons Grid */
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px; /* Adjusted gap for spacing */
+}
+
+/* Button Styles */
+button {
+  padding: 20px; /* Increased padding for larger buttons */
+  font-size: 1.5rem; /* Increased font size */
+  font-weight: bold;
+  border: none;
+  border-radius: 15px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.btn {
+  background: #4a4a4a;
+  color: #fff;
+}
+
+.btn-number {
+  background: #424242;
+}
+
+.btn-operator {
+  background: #ff9800;
+  color: #fff;
+}
+
+.btn-equals {
+  background: #4caf50;
+  color: #fff;
+}
+
+.btn-special {
+  background: #e91e63;
+  color: #fff;
+}
+
+/* Button Active State */
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsiveness */
+@media (max-width: 480px) {
   .calculator-container {
-    background: #2d2d2d;
-    width: 500px; /* Increased width */
-    border-radius: 15px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    padding: 30px; /* Adjusted padding */
+    width: 95%;
   }
-  
-  /* Title */
+
   .calculator-title {
-    text-align: center;
-    font-size: 2rem; /* Increased font size */
-    margin-bottom: 30px; /* Adjusted margin */
-    color: #ffeb3b;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.5rem;
   }
-  
-  /* Display Area */
-  .calculator-display {
-    background: #1e1e1e;
-    padding: 25px; /* Increased padding for a larger display */
-    border-radius: 15px; /* Adjusted rounding for consistency */
-    text-align: right;
-    margin-bottom: 30px; /* Adjusted margin for spacing */
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.2);
-    font-size: 1.5rem; /* Increased base font size */
-  }
-  
-  .display-small-text {
-    font-size: 1rem; /* Increased font size */
-    color: #999;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-  
+
   .display-large-text {
-    font-size: 3rem; /* Increased font size for clarity */
-    font-weight: bold;
-    color: #fff;
+    font-size: 2rem;
   }
-  
-  /* Buttons Grid */
-  .calculator-buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px; /* Adjusted gap for spacing */
-  }
-  
-  /* Button Styles */
+
   button {
-    padding: 20px; /* Increased padding for larger buttons */
-    font-size: 1.5rem; /* Increased font size */
-    font-weight: bold;
-    border: none;
-    border-radius: 15px; /* Slightly rounded corners */
-    cursor: pointer;
-    transition: all 0.3s ease;
+    padding: 15px;
+    font-size: 1.2rem;
   }
-  
-  button:hover {
-    transform: scale(1.1);
-  }
-  
-  .btn {
-    background: #4a4a4a;
-    color: #fff;
-  }
-  
-  .btn-number {
-    background: #424242;
-  }
-  
-  .btn-operator {
-    background: #ff9800;
-    color: #fff;
-  }
-  
-  .btn-equals {
-    background: #4caf50;
-    color: #fff;
-  }
-  
-  .btn-special {
-    background: #e91e63;
-    color: #fff;
-  }
-  
-  /* Button Active State */
-  button:active {
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-  }
-  
-  /* Responsiveness */
-  @media (max-width: 480px) {
-    .calculator-container {
-      width: 95%;
-    }
-  
-    .calculator-title {
-      font-size: 1.5rem;
-    }
-  
-    .display-large-text {
-      font-size: 2rem;
-    }
-  
-    button {
-      padding: 15px;
-      font-size: 1.2rem;
-    }
-  }
-  
+}
