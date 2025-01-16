@@ -10,7 +10,7 @@ let operator = ""; // Stores the current operator
 // Function to update the display
 function updateDisplay() {
   // Limit input to fit the screen (e.g., 10 characters max)
-  const maxLength = 15;
+  const maxLength = 10;
 
   // Only show "0" if there's no previous input or current input is empty
   currentOperation.textContent = currentInput === "" && !previousInput
@@ -19,9 +19,7 @@ function updateDisplay() {
       ? currentInput.slice(0, maxLength)
       : currentInput;
 
-  previousOperation.textContent = previousInput
-    ? `${previousInput} ${operator}`
-    : ""; // Show previous input and operator
+  previousOperation.textContent = previousInput; // Show previous input 
 }
 
 // Function to handle button clicks
@@ -54,7 +52,7 @@ function handleButtonClick(event) {
     if (previousInput && operator && currentInput) {
       try {
         const result = calculate(previousInput, operator, currentInput);
-        previousInput = `${previousInput} ${operator} ${currentInput} =`; // Show full calculation in the upper screen
+        previousInput = ""; // Clear previous input after calculation
         currentInput = result.toString(); // Show result on the lower screen
         operator = ""; // Clear the operator
         updateDisplay(); 
@@ -75,10 +73,10 @@ function handleButtonClick(event) {
     }
   } else {
     // Operators (+, -, *, /, %)
-    operator = value; // Set the operator
-    previousInput = currentInput; // Store the current result as previous input
+    previousInput += currentInput + " " + value + " "; 
     currentInput = ""; // Clear current input for the next number
-    updateDisplay(); 
+    operator = value; // Set the operator
+    updateDisplay();
   }
 }
 
